@@ -1,0 +1,50 @@
+Les variables
+
+Quand on parle de variable en Python, on fait référence à un moyen de stocker des éléments dans mémoire de votre ordi.
+Dans une variable, vous pouvez stocker : un nom, une liste de noms, un âge, etc.
+
+En termes de nom :
+
+nom = "Jean"
+
+En termes d'âge :
+
+age = 18
+
+En termes de liste :
+
+cours = ["Math", "Géométrie", "Physique"]
+
+...
+
+La structure que vous voyez ci-dessus est la manière de déclarer une variable et d'y attribuer une valeur.
+La valeur est l'élément contenu dans la variable.
+
+La valeur de nom est "Jean" et celle de age est 18.
+
+Voici comment se déclare une variable :
+
+Vous choisissez un nom que vous voulez donner à votre variable.
+Exemple : marque
+Et pour lui attribuer une valeur, vous utilisez le signe égal "=".
+Exemple : marque = "Toyota"
+
+En Python, lorsqu'une variable est déclarée, elle doit immédiatement être affectée ou recevoir une valeur.
+
+
+Attribuer une valeur à une variable s'appelle une affectation, et elle se fait par l'intermédiaire du signe égal "=".
+
+Élément important à savoir :
+
+Vos variables ne doivent pas commencer par un chiffre, ne doivent pas contenir de signes spéciaux et encore moins d'accents.
+La meilleure manière de déclarer une variable si elle est longue est d'utiliser le tiret du bas, appelé underscore.
+
+Exemple :
+marque_de_voiture = "Toyota"
+filiere_academique = "Data Science"
+jeux_favoris = "Call of Duty"
+
+L'utilisation du tiret du bas est une méthode en Python pour déclarer des variables.
+Cette méthode s'appelle snake_case.
+
+nou

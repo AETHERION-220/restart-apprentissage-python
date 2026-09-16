@@ -1,0 +1,9 @@
+Pour commencer, il vous faudra un éditeur de texte pour écrire votre programme. Je vous conseillerais VS Code.
+
+Ensuite, vous devez télécharger le langage Python et l'ajouter au chemin de votre ordinateur.
+
+Python est un langage de programmation. Vous pouvez créer plein de choses avec lui, comme des applications, par exemple.
+
+Vous pouvez aussi traiter des chiffres afin de produire des graphiques, comme en statistique.
+
+La plupart des choses que vous pouvez faire dans la vie réelle, que ce soit en statistique, en mathématiques, en physique, peuvent être introduites dans Python afin d'automatiser les tâches, en résumé.
