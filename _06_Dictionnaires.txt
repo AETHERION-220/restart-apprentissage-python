@@ -1,0 +1,117 @@
+Les dictionnaires font partie des structures de données en Python.
+Ils sont utilisés pour stocker des informations sous forme de paires clé-valeur, contenues dans des accolades {}.
+
+Exemple :
+
+start_up = {
+    "ceo": "Tsaphnath Kahuta",
+    "nom_de_la_start_up": "Innova",
+    "slogan": "L'innovation n'est que le début"
+}
+
+La clé se trouve à gauche et la valeur à droite, séparées par deux-points :
+
+- clé : valeur
+
+Exemple :
+
+"ceo" est une clé
+"Tsaphnath Kahuta" est sa valeur
+
+Nous avons donc trois clés dans ce dictionnaire :
+
+- "ceo"
+- "nom_de_la_start_up"
+- "slogan"
+
+Comment accéder à un élément :
+
+L'accès aux éléments se fait de la même manière que pour les listes, mais en utilisant la clé au lieu de l'index.
+
+nouvelle_campagne = {
+    "responsable_de_campagne": "Jeanne d'Arc",
+    "nom_de_campagne": "Campagne : Nous aimons les chiens",
+    "date_de_debut": "01/01/2020",
+    "influenceurs_importants": ["@MonAmourDeChien", "@MeilleuresFriandisesPourChiens"]
+}
+
+print(nouvelle_campagne["responsable_de_campagne"])
+
+Le résultat sera :
+
+Jeanne d'Arc
+
+Les clés permettent d'accéder aux valeurs associées.
+
+Créer un dictionnaire :
+
+Pour créer un dictionnaire, on déclare une variable et on utilise des accolades {}.
+
+Exemple :
+
+mon_programme = {}
+mon_nouveau_programme = dict()
+
+Ajouter un élément :
+
+mon_programme["Lundi"] = "Planifier la semaine, aller à la fac et se reposer."
+mon_programme["Mardi"] = "Noter les tâches importantes et créer le repository du projet."
+
+Si vous faites :
+
+print(mon_programme)
+
+Vous verrez toutes les clés et leurs valeurs.
+
+Et si vous faites :
+
+print(mon_programme["Lundi"])
+
+Vous aurez seulement la valeur associée à la clé "Lundi".
+
+Si vous ajoutez une clé qui existe déjà, la valeur précédente sera remplacée par la nouvelle.
+
+Modifier une valeur :
+
+Pour modifier une valeur, il suffit de faire appel à la clé correspondante.
+
+Exemple :
+
+mon_programme["Lundi"] = "Planifier et se concentrer sur les tâches les plus importantes pendant la première heure, puis sur les tâches moins prioritaires pendant la seconde heure."
+
+C'est aussi simple que cela.
+
+Supprimer un élément :
+
+Pour supprimer un élément, on peut utiliser le mot-clé del ou la méthode pop().
+
+Exemple avec del :
+
+del mon_programme["Lundi"]
+
+Exemple avec pop() :
+
+mon_programme.pop("Mardi")
+
+Si vous affichez le dictionnaire après cela, seules les paires restantes seront visibles.
+
+Important :
+
+Certains mots sont réservés par Python et ne peuvent pas être utilisés comme noms de variables, par exemple :
+
+if, else, for, while, del, class, return, etc.
+
+Quelques méthodes utiles :
+
+- keys() : affiche les clés du dictionnaire
+- values() : affiche les valeurs du dictionnaire
+- items() : retourne une vue avec les couples clé-valeur
+
+Exemples :
+
+print(mon_programme.keys())
+print(mon_programme.values())
+print(mon_programme.items())
+
+Les dictionnaires sont très utiles pour stocker des données structurées, comme des informations sur une personne, un produit ou un projet.
+
