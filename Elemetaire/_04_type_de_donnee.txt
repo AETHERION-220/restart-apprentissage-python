@@ -1,0 +1,113 @@
+Le type de donnée
+
+Le type de donnée est une manière de classer vos éléments. On peut comparer cela à une boîte dans laquelle vous mettez des objets de même catégorie.
+
+Par exemple, si vous avez des fruits et des légumes, vous les séparez selon leur nature. Les mangues, les pommes et les oranges sont des fruits ; les carottes, les tomates et les épinards sont des légumes.
+
+En Python, le type de donnée sert à définir la catégorie d'un élément.
+
+Il existe plusieurs types de données, mais les plus importants sont :
+
+- les nombres entiers
+- les nombres décimaux
+- les chaînes de caractères
+- les booléens
+- les listes
+
+1. Les nombres entiers
+
+Les nombres entiers sont appelés int en Python.
+Ce sont des nombres sans virgule.
+
+Exemples :
+12
+20
+16
+-5
+0
+
+Exemple de code :
+
+age = 22
+print(age)
+
+2. Les nombres décimaux
+
+Les nombres décimaux sont appelés float en Python.
+Ce sont des nombres avec une virgule.
+
+Exemples :
+100.2
+12.0
+15.4
+
+Exemple de code :
+
+prix = 19.99
+print(prix)
+
+3. Les chaînes de caractères
+
+Les chaînes de caractères servent à stocker du texte. En Python, on les met entre guillemets.
+
+Exemples :
+"Jean"
+"Bonjour"
+"Data Science"
+
+Exemple de code :
+
+nom = "Jean"
+print(nom)
+
+4. Les booléens
+
+Les booléens ne prennent que deux valeurs : True ou False.
+Ils servent souvent à tester une condition.
+
+Exemple :
+
+est_adulte = True
+print(est_adulte)
+
+5. Les listes
+
+Une liste sert à regrouper plusieurs éléments dans une même variable.
+
+Exemple :
+
+fruits = ["mangue", "pomme", "orange"]
+print(fruits)
+
+Pourquoi c'est important ?
+
+Parce que Python ne traite pas tous les éléments de la même manière.
+Un nombre peut être additionné, tandis qu'un texte ne peut pas être additionné avec un nombre sans conversion.
+
+Exemple :
+
+a = 22
+b = 16.22
+print(a + b)
+
+Voici un autre exemple :
+
+prenom = "Jean"
+print("Bonjour " + prenom)
+
+En résumé, le type de donnée sert à dire quel genre d'élément on a dans une variable.
+Et selon ce type, Python peut faire des calculs, afficher du texte ou vérifier des conditions.
+
+Le plus important est de comprendre que chaque type a son propre rôle.
+
+Exemple final :
+
+age = 18
+nom = "Marie"
+est_etudiant = True
+
+print(age)
+print(nom)
+print(est_etudiant)
+
+Tout cela est possible parce que Python sait reconnaître le type de chaque donnée.
