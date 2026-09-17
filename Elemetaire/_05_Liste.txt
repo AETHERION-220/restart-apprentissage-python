@@ -1,0 +1,150 @@
+Le liste 
+
+une variable ne peut contenir qu'un seul element, mais le liste plusieur elements
+
+imaginez que vous ayez 6 voitures, trois qui sont hybride et les autres electrique, vous avez besoin de classer ou trier vos categorie de voitute
+
+vous pouvez tous simplement reunir le 3 hybride et l'introduire dans une categorie hybride et pour ce qui est des autres dans une categorie electrique
+
+en python vous creer une liste
+
+mes_voitures_hybrides = ["toyota","ikea" , "mercedes"]
+mes_voitures_electrique = ["range rover", "lavrador", "analor"]
+
+la creation de liste se fait par de [] crocher
+
+et vos liste peuve conetnur aussi de chiffre ou des melande de chaine de caretere et liste
+
+ma_liste = ["voiture", 2, 5," mrkmk"]
+
+
+
+methode de liste :
+
+vous pouvez acceder a vos liste via les indexs
+
+ex :
+
+print(mes_voitures_electrique[0])
+
+ceci affichierab toyota
+
+en python les elements commence bien souvent par 0, et les index de liste commence par 0
+ si vous avez 5 eleemnt , commencer par le compter a partir de 0
+ tel est le systeme d'indexage de liste et achaque fois que vous voudrier acceder a un element de voytre liste 
+ regarder la methode c-haut
+
+ le methode :
+
+ le methode de liste sont une maniere d'inetragir avec vos liste 
+
+ par exmple pour ajouter , modifier et surppriner , l'on utilise de methode de liste
+
+ aujouter des elementdans votre liste :
+
+ on utilise la methode .append()
+
+ ex:
+
+ mes_amis = ["mark", "jean" , "luc", "david"]
+
+ mes_amis.append("Andre")
+
+ print(mes_amis)
+
+ ceci afficheras  ['mark','jean','luc','david', 'Andre']
+
+ tel est la maniere d'ajouter des element dans une liste
+
+ modifier :
+
+ pour modifer des elements dans une liste l'on utilise les systemes d'inxage 
+
+ vous voulez remplacer le nom de mark par mathieu
+
+ mes_amis[0] = "mathieu"
+
+print(mes_amis)
+
+ceci afficheras ['mathieu','jean','luc','david', 'Andre']
+
+pour modifier vous devez metionner l'index de l'element que vous voulez supprimer
+et faire egale en y mettans ce que vous vousliez ramplacer
+
+tel est la structure pour modifer
+
+supprimer :
+
+pour supprimer il existe deux methode
+
+la premiere methode c'est la methode .remove()
+
+dans la liste de vos amis vous voulez suppriner jean
+
+alors vous faite 
+
+mes_amis.remove("jean")
+print(mes_amis)
+
+ceci afficheras
+
+['mathieu','luc','david', 'Andre']
+
+tel est la structure pour modifier avex la methode .remove()
+
+il existe aussi la methode del :
+
+cette methode vous permet de supprimer un element par son index , au lieu d'ecrire les noms de l'element a supprimer
+
+si vous avez envie de supprimer 'Andre', alors vous faite
+
+del mes_amis[3]
+
+comme Andre est au troisiem index , andre seras supprimer , mais si vous allez au dela il y'auras errur car la liste de continet pas 
+un indx surppeiri au nombre 
+
+vous pouvez aussi compter les nombres d'element dans votre listes, pour le faire on utilise la methode len
+
+voici votre liste d'amis au debut 
+
+mes_amis = ["mark", "jean" , "luc", "david"]
+
+pour compter le nombre d'element vous faite
+
+len(mes_amis)
+
+ceci afficheras les nombres d'elemnts dans votre liste
+
+et avec print(mes_amis)
+
+afficheras 4
+
+indexage est different de nombre d'element, l'indexage c'est votre ordinateur qui compte , mais aevec len c'est le nombred'eleemnt se trovant dans votre liste
+
+il existe aussi ce qu'on appele de tuples
+
+les tuples sont aussi des structures de donnes en python , a la difference pret est quel sont immuable
+c'est a dire une fois declarer elle ne peuvent pas etre modifer
+
+pour declarer une liste, l'on utilise le () parenthese au lieu de crocher
+
+ex 
+
+mes_amis_tuple = ("mark", "jean" , "luc", "david")
+
+avec les tuples vous pouvez connaire la lonheur avec len , vous pouvais afficher par indexage mais jamais modfier les element a l'interieur
+que ce soit pour supprimer, ou ajouter
+le mieux serais de creer un autre tuple et l'addition dans une nouvelle variable 
+
+mes_amis = ("mark", "jean" , "luc", "david")
+mes_nouvelles_amis = ("Andre", "christoph")
+
+ma_nouvelle_liste = mes_amis + mes_nouvelles_amis
+
+print(ma_nouvelle_liste)
+
+le retour seras : ('mark', 'jean', 'luc', 'david', "Andre", "christoph")
+
+
+
+
