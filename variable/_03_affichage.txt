@@ -1,0 +1,71 @@
+Pour afficher une variable ou un élément, on utilise un mot-clé appelé print.
+
+print permet d'afficher des éléments. Il suffit de le lui donner.
+
+print() : le mot-clé
+
+nom = "Jean"
+
+print("Bonjour")
+print(16)
+print(nom)
+
+Dans le premier cas, on affiche un texte. Chaque fois qu'il faut afficher un texte, on met ce texte entre guillemets.
+Et pour afficher un nombre, on ne met généralement pas de guillemets.
+
+Par exemple :
+print(16) et print("16") affichent presque la même chose,
+mais il est conseillé de l'afficher sans guillemets.
+
+À savoir : vous ne pouvez pas afficher une variable sans qu'elle ait été déclarée.
+
+Si vous faites un print(nom) avant de le déclarer, il y aura une erreur.
+
+Il faut d'abord déclarer la variable, puis l'afficher.
+
+
+* Pour afficher plusieurs variables avec un print, vous pouvez utiliser deux méthodes.
+
+La méthode 1 : la concaténation
+
+La concaténation consiste à concaténer, c'est-à-dire à joindre des éléments bout à bout.
+Supposons que nous avons 3 variables :
+nom = "Jean"
+prenom = "David"
+age = 20
+
+Concaténer revient à joindre ces éléments ensemble.
+
+Pour concaténer, on peut utiliser deux éléments : soit la virgule, soit l'opérateur +.
+
+Voici un exemple avec l'opérateur + :
+
+print(nom + prenom)
+
+Le retour sera donc : JeanDavid
+
+Vous pouvez également faire :
+
+print("Bonjour " + nom + " " + prenom)
+
+Le résultat sera : Bonjour Jean David
+
+L'utilisation de la virgule :
+
+print(nom, prenom)
+
+Le retour sera : Jean David
+
+Voici un autre exemple :
+
+print("Bonjour", nom, prenom)
+
+Il existe une différence importante entre l'utilisation de la virgule et de l'opérateur + dans la concaténation. À vous de trouver laquelle.
+
+Et la deuxième méthode pour concaténer est d'utiliser le f-string.
+
+Le f-string est une méthode qui consiste à mettre un f avant les guillemets et à insérer les variables à l'intérieur des accolades.
+
+print(f"Bonjour {prenom} {nom}, ravi de vous voir !")
+
+Cette méthode est beaucoup plus simple et plus efficace que les autres.
