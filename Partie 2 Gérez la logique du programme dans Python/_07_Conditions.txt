@@ -1,0 +1,144 @@
+Les conditions en Python
+
+Les conditions sont un moyen de controler le deroulement de votre programme.
+Elles permettent de dire :
+
+- si quelque chose est vrai, alors on execute une action
+- sinon, on execute une autre action
+
+C'est comme dans la vie de tous les jours.
+
+Exemple simple :
+
+S'il fait beau, je vais a la plage.
+Sinon, je reste a la maison.
+
+En Python, on ecrit ca avec if, elif et else.
+
+if il_fait_beau:
+    print("on va a la plage !")
+else:
+    print("on reste a la maison !")
+
+La condition est la chose qui decide si le code doit s'executer ou non.
+
+La structure de base est :
+
+if condition:
+    # code a executer si la condition est vraie
+else:
+    # code a executer si la condition est fausse
+
+Exemple 2 :
+
+age = 18
+
+if age >= 18:
+    print("tu es majeur")
+else:
+    print("tu es mineur")
+
+Dans cet exemple, la condition age >= 18 est vraie ou fausse.
+Si elle est vraie, le programme affiche "tu es majeur".
+Sinon, il affiche "tu es mineur".
+
+elif permet d'ajouter d'autres alternatives.
+
+Exemple :
+
+note = 15
+
+if note >= 18:
+    print("Excellent")
+elif note >= 12:
+    print("Bien")
+elif note >= 8:
+    print("Passable")
+else:
+    print("A revoir")
+
+On peut aussi combiner plusieurs conditions avec :
+
+- and : et
+- or : ou
+- not : negation
+
+Exemple :
+
+age = 22
+est_etudiant = True
+
+if age >= 18 and est_etudiant:
+    print("Tu es adulte et etudiant")
+else:
+    print("Tu ne remplis pas les conditions")
+
+Dans ce cas, il faut que les deux conditions soient vraies.
+
+Avec or, il suffit qu'une condition soit vraie :
+
+if age < 18 or est_etudiant:
+    print("Au moins une condition est vraie")
+
+Avec not, on inverse une condition :
+
+if not est_etudiant:
+    print("Tu n'es pas etudiant")
+
+Les operateurs de comparaison :
+
+- == egal a
+- != different de
+- < inferieur a
+- > superieur a
+- <= inferieur ou egal a
+- >= superieur ou egal a
+
+Exemple :
+
+nombre = 10
+
+if nombre == 10:
+    print("Le nombre est egal a 10")
+
+if nombre != 5:
+    print("Le nombre n'est pas egal a 5")
+
+if nombre > 8:
+    print("Le nombre est superieur a 8")
+
+Les conditions servent a chaque fois qu'on veut decider une action en fonction d'une situation.
+
+C'est un concept tres important en Python.
+
+Exemple concret :
+
+numero = 7
+
+if numero % 2 == 0:
+    print("C'est un nombre pair")
+else:
+    print("C'est un nombre impair")
+
+Ici, on verifie si le nombre est divisible par 2.
+
+L'indentation est tres importante en Python.
+
+if True:
+    print("ce code est indenté")
+print("ce code n'est plus dans le if")
+
+Le code qui suit le if doit etre decolle d'un certain espacement.
+Sinon Python marque une erreur.
+
+En resume :
+
+- if : si la condition est vraie
+- elif : sinon si une autre condition est vraie
+- else : sinon
+- and / or / not : pour combiner des conditions
+- ==, !=, <, >... : pour comparer des valeurs
+
+Les conditions permettent de rendre votre programme intelligent et adaptable.
+
+Et c'est la base de la logique en programmation.
