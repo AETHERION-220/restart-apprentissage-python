@@ -1,0 +1,185 @@
+Les boucles en Python
+
+Les boucles servent a repeter des taches plusieurs fois.
+Elles sont tres utiles lorsque vous avez une liste d'elements ou lorsque vous voulez executer la meme action tant qu'une condition est vraie.
+
+Il existe deux grandes boucles en Python :
+
+- for
+- while
+
+Les boucles permettent d'automatiser le code et de gagner du temps.
+
+Utiliser la boucle for
+
+La boucle for sert a parcourir une sequence.
+Une sequence peut etre :
+
+- une liste
+- un tuple
+- un ensemble
+- un dictionnaire
+- une chaine de caracteres
+
+Exemple :
+
+races_de_chien = ["golden retriever", "chihuahua", "terrier", "carlin"]
+
+for chien in races_de_chien:
+    print(chien)
+
+Dans cet exemple :
+
+- la boucle parcours chaque element de la liste
+- la variable chien prend successivement chaque valeur de la liste
+- a chaque tour, le code de la boucle est repete
+
+Exemple avec une chaine de caracteres :
+
+mot = "Python"
+
+for lettre in mot:
+    print(lettre)
+
+Ici, la boucle affiche chaque lettre de la chaine un par un.
+
+Utiliser la fonction range()
+
+La fonction range() permet de creer une sequence de nombres.
+
+Exemple :
+
+for x in range(5):
+    print(x)
+
+Ce code affichera :
+
+0
+1
+2
+3
+4
+
+La fonction range(5) va donc de 0 a 4.
+
+Exemple avec un texte :
+
+for x in range(5):
+    print(f"{x} bouteilles de biere au mur !")
+
+La lettre f devant la chaine permet de formater la chaine et d'inserer la variable x.
+
+On peut aussi commencer a partir d'un autre nombre :
+
+for x in range(4, 10):
+    print(x)
+
+Ce code affiche les nombres de 4 a 9.
+
+Utiliser la boucle while
+
+La boucle while sert a repeter un bloc de code tant qu'une condition est vraie.
+
+Exemple :
+
+capacite_actuelle = 3
+capacite_maximale = 10
+
+while capacite_actuelle < capacite_maximale:
+    capacite_actuelle += 1
+    print(capacite_actuelle)
+
+Dans cet exemple, la boucle continue tant que la capacite_actuelle est inferieure a capacite_maximale.
+A chaque tour, on augmente la valeur de 1.
+
+La boucle while est utile quand on ne connait pas a l'avance le nombre de repetitions.
+
+ATTENTION : les boucles infinies
+
+Une boucle infinie se produit lorsque la condition reste toujours vraie.
+
+Exemple :
+
+x = 0
+
+while x != 5:
+    x += 2
+
+Ici, x ne va jamais valoir 5, car on ajoute 2 a chaque tour.
+La boucle ne s'arretera donc jamais.
+
+Il faut donc toujours penser a une condition de sortie.
+
+Break et continue
+
+Les mots reserves break et continue permettent de controler le deroulement d'une boucle.
+
+Break : on sort de la boucle immediatement.
+
+Exemple :
+
+for i in range(10):
+    if i == 5:
+        break
+    print(i)
+
+Dans cet exemple, la boucle s'arrete quand i vaut 5.
+
+Continue : on passe a l'iteration suivante sans executer le reste du code de cette boucle.
+
+Exemple :
+
+for element in [1, 2, 3, 4, 5]:
+    if element == 3:
+        continue
+    print(element)
+
+Dans cet exemple, le nombre 3 est ignore.
+
+Exemple concret avec une liste
+
+nombres = [1, 2, 3, 4, 5]
+
+for nombre in nombres:
+    print(nombre * 2)
+
+Ici, la boucle multiplie chaque nombre par 2.
+
+Exemple concret avec un mot
+
+mot = "bonjour"
+
+for lettre in mot:
+    if lettre == "o":
+        print("J'ai trouve la lettre o")
+
+La boucle parcourt toutes les lettres et detecte celles qui correspondent a la condition.
+
+Quand utiliser for et quand utiliser while ?
+
+On utilise for quand on sait combien de fois on veut repeter le code ou quand on parcourt une liste.
+
+On utilise while quand la boucle doit continuer jusqu'a ce qu'une condition soit remplie.
+
+Exemple compare :
+
+# for : on sait qu'on veut parcourir 5 elements
+for i in range(5):
+    print(i)
+
+# while : on continue tant que la condition est vraie
+compteur = 0
+while compteur < 5:
+    print(compteur)
+    compteur += 1
+
+En resume :
+
+- for sert a parcourir une sequence
+- while sert a repeter tant qu'une condition est vraie
+- break permet de sortir de la boucle
+- continue permet de passer a l'iteration suivante
+- les boucles permettent de gagner du temps et de repeter des actions
+
+Les boucles sont essentielles en programmation.
+Elles vous aideront a traiter des listes, calculer des statistiques, lire des donnees et automatiser des taches repetitives.

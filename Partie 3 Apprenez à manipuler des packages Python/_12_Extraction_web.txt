@@ -1,0 +1,254 @@
+L'extraction et la transformation de donnees avec le web
+
+L'extraction de donnees web est une technique tres utile.
+Elle permet de recupere des informations presentes sur internet et de les utiliser dans un programme Python.
+
+Voici l'idee generale :
+
+- on recupere le code HTML d'une page web
+- on repere les informations qui nous interessent
+- on les transforme dans un format pratique
+- on peut ensuite les enregistrer dans un fichier CSV ou les utiliser dans un autre programme
+
+Ce processus s'appelle ETL.
+
+ETL = Extraction, Transformation, Chargement
+
+- Extract : extraire les donnees
+- Transform : transformer les donnees
+- Load : charger les donnees ailleur
+
+Pourquoi c'est important ?
+
+L'extraction de donnees web permet de gagner du temps.
+Au lieu de copier manuellement des informations, on automatise la recuperation.
+
+Par exemple, vous pouvez extraire :
+
+- les prix des produits
+- les titres d'articles
+- les descriptions
+- les informations publiques sur un site web
+
+HTML : la structure des pages web
+
+Le HTML est le langage qui compose les pages web.
+Il est organise avec des balises.
+
+Exemple simple :
+
+<html>
+    <head>
+        <title>Mon site</title>
+    </head>
+    <body>
+        <p>Bonjour</p>
+    </body>
+</html>
+
+Les balises les plus importantes :
+
+- <html> : indique le debut de la page
+- <head> : les informations de configuration
+- <title> : le titre de la page
+- <body> : le contenu visible
+- <p> : un paragraphe
+- <h1>, <h2> : titres
+- <a> : lien
+- <div> : bloc general
+
+Le package Requests
+
+Requests est un package Python tres utile pour faire des requetes HTTP.
+
+Il permet de recuperer le code HTML d'une page web.
+
+Exemple :
+
+import requests
+
+url = "https://www.gov.uk/search/news-and-communications"
+page = requests.get(url)
+
+print(page.content)
+
+Cela affiche le code source HTML de la page.
+
+Le package BeautifulSoup
+
+Le HTML brut est difficile a lire directement.
+Pour le traiter facilement, on utilise BeautifulSoup.
+
+BeautifulSoup permet de parser le HTML.
+Parser signifie analyser la structure pour trouver les informations voulues.
+
+Installation :
+
+pip install beautifulsoup4
+
+Exemple :
+
+import requests
+from bs4 import BeautifulSoup
+
+url = "https://www.gov.uk/search/news-and-communications"
+page = requests.get(url)
+
+soup = BeautifulSoup(page.content, "html.parser")
+print(soup.title)
+
+Dans cet exemple :
+
+- requests.get() recupere le contenu de la page
+- BeautifulSoup(...) analyse ce contenu
+- soup.title permet d'obtenir le titre HTML
+
+Voici quelques methodes utiles de BeautifulSoup :
+
+soup.title
+soup.title.string
+soup.find_all("h2")
+soup.find(id="titre")
+soup.find_all("li")
+soup.select("li.product")
+
+Exemple de page HTML simple :
+
+<html>
+    <head>
+        <title>Les chiens les plus mignons</title>
+    </head>
+    <body>
+        <p class="title"><b>Les meilleures races de chiens</b></p>
+        <p class="chiens">
+            <a href="http://exemple.com/labradoodle" class="race" id="lien1">LabraDoodle</a>,
+            <a href="http://exemple.com/retriever" class="race" id="lien2">Golden Retriever</a> et
+            <a href="http://exemple.com/carlin" class="race" id="lien3">Carlin</a>
+        </p>
+    </body>
+</html>
+
+On peut par exemple extraire :
+
+- le titre de la page
+- le texte du paragraphe
+- les liens
+
+Exemple :
+
+from bs4 import BeautifulSoup
+
+html = """
+<html>
+    <body>
+        <p class="title"><b>Les meilleures races de chiens</b></p>
+    </body>
+</html>
+"""
+
+soup = BeautifulSoup(html, "html.parser")
+print(soup.find("p", class_="title").get_text())
+
+Le code ci-dessus affiche :
+
+Les meilleures races de chiens
+
+Lire un fichier HTML local
+
+Il est aussi possible de lire un fichier HTML local present dans le repertoire du projet.
+
+Exemple :
+
+with open("index.html", "r", encoding="utf-8") as file:
+    soup = BeautifulSoup(file.read(), "html.parser")
+
+Cela permet de travailler sur un fichier local sans avoir a telecharger la page web.
+
+La transformation des donnees
+
+Une fois les donnees extraites, il faut souvent les transformer.
+
+Par exemple :
+
+- enlever le symbole euro
+- changer un prix de euros vers des dollars
+- reorganiser les donnees dans un dictionnaire
+- filtrer les elements inutiles
+
+Exemple :
+
+prix = "20 €"
+prix_net = prix.replace("€", "").strip()
+print(prix_net)
+
+Le resultat sera :
+
+20
+
+Puis, si on veut convertir en dollars :
+
+prix_euro = 20
+prix_dollar = prix_euro * 1.2
+print(prix_dollar)
+
+Le resultat sera :
+
+24.0
+
+Exemple pratique :
+
+produits = [
+    {"nom": "T-shirt", "prix": "20 €"},
+    {"nom": "Pantalon", "prix": "40 €"}
+]
+
+for produit in produits:
+    prix = produit["prix"].replace("€", "").strip()
+    produit["prix_en_dollars"] = float(prix) * 1.2
+
+print(produits)
+
+Cela montre comment transformer des donnees extraites en une structure plus propre.
+
+Exemple complet d'extraction et de transformation
+
+from bs4 import BeautifulSoup
+
+with open("index.html", "r", encoding="utf-8") as file:
+    soup = BeautifulSoup(file.read(), "html.parser")
+
+# Recuperation d'une liste de produits
+produits = soup.find_all("div", class_="product")
+
+resultats = []
+
+for produit in produits:
+    nom = produit.find("h2").get_text(strip=True)
+    prix = produit.find("p", class_="price").get_text(strip=True)
+    description = produit.find("p", class_="description").get_text(strip=True)
+
+    prix_net = prix.replace("prix", "").replace(":", "").strip()
+    prix_dollar = float(prix_net) * 1.2
+
+    resultats.append({
+        "nom": nom,
+        "prix_euro": prix_net,
+        "prix_dollar": prix_dollar,
+        "description": description
+    })
+
+print(resultats)
+
+Ce type de code est tres utile pour automatiser l'extraction d'informations depuis des pages web.
+
+En resume :
+
+- Requests permet de recuperer le code HTML d'une page
+- BeautifulSoup permet de parser ce code HTML
+- on peut extraire des titres, des liens, des descriptions, des prix
+- on transforme ensuite les donnees pour les rendre exploitables
+- on peut stocker les donnees dans un fichier CSV ou les utiliser directement dans un programme
+
+L'extraction web est une competence tres utile pour collecter et analyser des donnees.
+
+C'est une etape importante dans le domaine de l'ETL.

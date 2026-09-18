@@ -1,0 +1,148 @@
+Les modules et les packages en Python
+
+En programmation, on ne re-invente pas toujours la roue.
+Parfois, il est utile de reutiliser du code deja ecrit par d'autres personnes.
+C'est la raison d'etre des modules et des packages.
+
+Pourquoi utiliser des modules et des packages ?
+
+Ils permettent :
+
+- d'organiser le code
+- de reutiliser des fonctions
+- d'eviter de recopier le meme code
+- de gagner du temps
+- de travailler plus efficacement
+
+Un module est simplement un fichier Python contenant du code.
+Il peut contenir des fonctions, des classes, des variables et bien plus.
+
+Exemple de module :
+
+mon_module.py
+
+def ma_fonction():
+    return "Bonjour"
+
+Pour utiliser ce module dans un autre fichier, on l'importe.
+
+import mon_module
+
+resultat = mon_module.ma_fonction()
+print(resultat)
+
+Dans cet exemple, on appelle la fonction ma_fonction depuis le module mon_module.
+
+Il est possible d'importer seulement une partie d'un module.
+
+from mon_module import ma_fonction
+
+resultat = ma_fonction()
+print(resultat)
+
+Cette forme est pratique quand on veut utiliser directement une fonction sans ecrire le nom du module a chaque fois.
+
+Il est souvent recommande de placer les imports au debut du fichier.
+
+Un package est un dossier contenant plusieurs modules Python.
+Pour qu'un dossier soit considere comme un package, il faut souvent ajouter un fichier __init__.py.
+
+Exemple de structure :
+
+mon_package/
+    __init__.py
+    mon_module.py
+
+Ensuite, on peut importer le module ainsi :
+
+import mon_package.mon_module
+
+resultat = mon_package.mon_module.ma_fonction()
+print(resultat)
+
+Ou directement :
+
+from mon_package.mon_module import ma_fonction
+
+resultat = ma_fonction()
+print(resultat)
+
+Les packages sont utiles pour organiser des projets plus grands.
+
+Les packages existants sur PyPI
+
+Python possede une enorme quantite de packages deja developpes.
+Ces packages sont disponibles sur PyPI, le Python Package Index.
+
+Des exemples connus :
+
+- Requests : pour faire des requetes HTTP
+- BeautifulSoup : pour parser du HTML et du XML
+- Pandas : pour manipuler et analyser des donnees
+
+PyPI permet de telecharger facilement des bibliotheques externes.
+
+Installer des packages avec pip
+
+pip est le gestionnaire de packages de Python.
+Il permet d'installer des bibliotheques dans votre environnement Python.
+
+Commande :
+
+pip install nom_du_package
+
+Pour voir les paquets installes :
+
+pip freeze
+
+Cette commande affiche toutes les dependances disponibles dans votre environnement.
+
+Exemple d'installation :
+
+pip install requests
+
+Ensuite, on peut utiliser le package dans le code :
+
+import requests
+
+reponse = requests.get("https://api.github.com")
+print(reponse.status_code)
+
+C'est ainsi que Python permet d'utiliser des bibliotheques externes pour aller plus vite.
+
+Exemple concret :
+
+# fichier operations.py
+
+def addition(a, b):
+    return a + b
+
+
+def multiplication(a, b):
+    return a * b
+
+# fichier main.py
+
+from operations import addition, multiplication
+
+print(addition(3, 5))
+print(multiplication(8, 2))
+
+Le resultat sera :
+
+8
+16
+
+Les imports permettent donc de diviser un programme en modules plus simples et plus maintenables.
+
+En resume :
+
+- un module est un fichier Python
+- un package est un dossier contenant des modules
+- import permet de charger du code existant
+- from ... import ... permet d'importer directement une fonction ou une classe
+- pip permet d'installer des packages disponibles sur PyPI
+- les packages economisent du temps et simplifient le developpement
+
+Utiliser les modules et les packages est une bonne pratique en Python.
+Cela rend votre code plus propre et plus puissant.

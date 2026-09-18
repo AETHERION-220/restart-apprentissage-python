@@ -1,0 +1,150 @@
+Les fonctions en Python
+
+Les fonctions servent a regrouper des taches et a reutiliser du code.
+Quand vous ecrivez un programme, il arrive souvent que vous ayez besoin de faire la meme action plusieurs fois.
+Au lieu de recopier le meme code, vous pouvez le mettre dans une fonction.
+
+Une fonction est un bloc de code avec un nom.
+Quand vous appelez cette fonction, le code qu'elle contient s'execute.
+
+Exemple simple :
+
+def afficher_message():
+    print("Bonjour, comment ca va ?")
+
+afficher_message()
+
+Dans cet exemple :
+
+- def signifie definition de fonction
+- afficher_message est le nom de la fonction
+- le code a l'interieur est execute quand on appelle la fonction
+
+Utiliser une fonction sans parametre
+
+Une fonction sans parametre ne prend aucune valeur en entree.
+Elle s'utilise quand on veut executer un bloc de code simple.
+
+Exemple :
+
+def saluer():
+    print("Salut !")
+
+saluer()
+
+La fonction affiche simplement Salut !
+
+Utiliser une fonction avec parametres
+
+Une fonction peut prendre des parametres.
+Les parametres sont des valeurs que l'on donne a la fonction quand on l'appelle.
+
+Exemple :
+
+def afficher_nom_prenom(nom, prenom):
+    print("Nom :", nom)
+    print("Prenom :", prenom)
+
+afficher_nom_prenom("Dupont", "Jean")
+
+Ce code affiche :
+
+Nom : Dupont
+Prenom : Jean
+
+Les parametres permettent d'utiliser la meme fonction avec des valeurs differentes.
+
+Utiliser une fonction avec une valeur de retour
+
+Certaines fonctions ne se contentent pas d'afficher quelque chose.
+Elles peuvent aussi calculer un resultat et le renvoyer avec return.
+
+Exemple :
+
+def calculer_somme(a, b):
+    resultat = a + b
+    return resultat
+
+somme = calculer_somme(2, 3)
+print(somme)
+
+Le resultat sera :
+
+5
+
+Le mot cle return permet de renvoyer une valeur a l'endroit ou la fonction a ete appelee.
+
+Exemple avec une fonction qui multiplie :
+
+def multiplier(x, y):
+    return x * y
+
+resultat = multiplier(4, 5)
+print(resultat)
+
+Le resultat affiche :
+
+20
+
+Quand utiliser des fonctions ?
+
+Les fonctions sont utiles quand :
+
+- vous avez du code repetitif
+- vous voulez structurer votre programme
+- vous voulez diviser le travail en parties claires
+- vous voulez reutiliser un bloc de code plusieurs fois
+
+Exemple concret :
+
+def calculer_moyenne(notes):
+    total = sum(notes)
+    moyenne = total / len(notes)
+    return moyenne
+
+mes_notes = [12, 15, 18]
+print(calculer_moyenne(mes_notes))
+
+Cette fonction calcule la moyenne d'une liste de notes.
+
+Une fonction peut aussi retourner plusieurs valeurs.
+
+Exemple :
+
+def infos_personne():
+    nom = "Tsaph"
+    age = 24
+    return nom, age
+
+prenom, age = infos_personne()
+print(prenom)
+print(age)
+
+Ici, la fonction renvoie deux valeurs en meme temps.
+Python les regroupe automatiquement dans un tuple.
+
+Les fonctions facilitent la maintenance du code.
+Elles rendent le programme plus lisible et plus simple a corriger.
+
+Exemple de fonction avec condition :
+
+def est_pair(nombre):
+    if nombre % 2 == 0:
+        return True
+    return False
+
+print(est_pair(10))
+print(est_pair(7))
+
+Le premier resultat est True, le deuxieme est False.
+
+En resume :
+
+- def permet de definir une fonction
+- les fonctions peuvent prendre des parametres
+- return permet de renvoyer une valeur
+- une fonction peut etre appelee plusieurs fois
+- les fonctions rendent le code plus propre et plus reutilisable
+
+Les fonctions sont une base essentielle de la programmation.
+Elles vous aideront a reorganiser votre code et a mieux comprendre la logique de votre programme.

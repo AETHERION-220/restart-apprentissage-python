@@ -1,0 +1,260 @@
+Les erreurs courantes en Python
+
+Ecrire du code propre et bien structure est extremement important.
+Quand vous codez, vous pouvez rencontrer des erreurs.
+Certaines erreurs sont simples a corriger, d'autres plus compliquees.
+
+Le but de ce chapitre est de vous aider a comprendre les erreurs les plus courantes et a les eviter.
+
+Pourquoi il faut ecrire un code structure ?
+
+Quand on ecrit du code, il faut garder des regles claires.
+Sinon, le programme devient difficile a lire et a corriger.
+
+Imaginez un tiroir ou tout est melange.
+Vous ne savez plus ou se trouve quoi.
+C'est pareil avec le code.
+
+Un code bien organise est plus facile a comprendre, a corriger et a maintenir.
+
+Ne vous repetez pas
+
+Le principe DRY signifie :
+
+Don't Repeat Yourself
+
+Ce qui veut dire :
+
+Ne vous repetez pas.
+
+Si vous recopiez le meme code plusieurs fois, il faut le mettre dans une fonction.
+
+Exemple :
+
+# mauvais
+prix1 = 10
+prix2 = 20
+prix3 = 30
+
+print(prix1 + 10)
+print(prix2 + 10)
+print(prix3 + 10)
+
+# mieux
+
+def ajouter_ten(prix):
+    return prix + 10
+
+print(ajouter_ten(10))
+print(ajouter_ten(20))
+print(ajouter_ten(30))
+
+Cette version est plus claire et plus facile a reutiliser.
+
+Respectez le principe de responsabilite unique
+
+Chaque fonction doit faire une seule chose.
+
+Exemple d'une mauvaise function :
+
+
+def calculer_et_enregistrer():
+    # calcul
+    # puis sauvegarde dans un fichier
+    pass
+
+Une fonction comme celle-ci fait trop de choses a la fois.
+Il vaut mieux la separer en deux fonctions :
+
+
+def calculer_taux_de_conversion():
+    pass
+
+
+def sauvegarder_csv():
+    pass
+
+Comme ca, chaque fonction a un role precis.
+
+Commenter votre code
+
+Les commentaires permettent d'expliquer ce que fait une partie du code.
+Ils servent surtout a vous rappeler l'objectif d'une ligne ou d'un bloc.
+
+Exemple :
+
+# Cette variable stocke le prix total
+prix_total = 120
+
+# Cette boucle additionne les nombres de la liste
+for nombre in [1, 2, 3, 4]:
+    print(nombre)
+
+Les commentaires aident les autres et vous-meme a mieux comprendre le code.
+
+Important :
+
+Les commentaires ne doivent pas contradire le code.
+Quand vous modifiez le programme, il faut aussi mettre a jour les commentaires.
+
+Documenter le code avec des docstrings
+
+Les docstrings sont des chaines de documentation places au debut d'une fonction, d'une classe ou d'un module.
+Elles donnent une description du but de ce bloc.
+
+Exemple :
+
+def somme(a, b):
+    """
+    Cette fonction calcule la somme de deux nombres.
+
+    Parametres :
+    a (int): premier nombre
+    b (int): deuxieme nombre
+
+    Retourne :
+    int: la somme de a et b
+    """
+    return a + b
+
+La docstring explique clairement ce que fait la fonction.
+Cela aide a la lecture et a l'utilisation du code.
+
+Gerer les erreurs avec try/except
+
+En Python, certaines erreurs peuvent faire planter le programme.
+Pour les controler, on utilise try et except.
+
+Exemple :
+
+while True:
+    try:
+        nombre = int(input("Entrez un nombre entier : "))
+        break
+    except ValueError:
+        print("Erreur : veuillez entrer un nombre entier.")
+
+Ici :
+
+- try contient le code susceptible de provoquer une erreur
+- except contient ce qu'on fait si une erreur arrive
+- le programme continue au lieu de planter
+
+Exemple avec division :
+
+try:
+    resultat = 10 / 0
+except ZeroDivisionError:
+    print("Erreur : division par zero impossible.")
+
+Autres erreurs courantes en Python
+
+1. SyntaxError
+
+C'est une erreur de syntaxe.
+Le code est mal ecrit, par exemple :
+
+if True
+    print("bonjour")
+
+Il manque les deux points :
+
+if True:
+    print("bonjour")
+
+2. NameError
+
+Cela arrive quand une variable n'existe pas.
+
+print(age)
+
+Si age n'a jamais ete declare, Python leve une NameError.
+
+3. TypeError
+
+C'est une erreur de type.
+Par exemple, on additionne un nombre et une chaine.
+
+print(5 + "bonjour")
+
+Python ne sait pas faire cette operation.
+
+4. IndexError
+
+Cela arrive quand on essaie d'acceder a un index qui n'existe pas dans une liste.
+
+ma_liste = [1, 2, 3]
+print(ma_liste[10])
+
+Ici, l'index 10 n'existe pas.
+
+5. KeyError
+
+Cela arrive quand on essaye d'acceder a une cle qui n'existe pas dans un dictionnaire.
+
+mon_dictionnaire = {"nom": "Tsaph"}
+print(mon_dictionnaire["age"])
+
+La clé age n'existe pas.
+
+6. ValueError
+
+Cela arrive quand une valeur est validement du bon type mais pas dans le bon format.
+
+int("bonjour")
+
+Cette expression leve une ValueError.
+
+Comment eviter les erreurs
+
+- ecrire le code proprement
+- utiliser des noms de variables clairs
+- indentier correctement
+- tester le code petit a petit
+- utiliser des fonctions pour separer les taches
+- commenter les blocs importants
+- utiliser try/except quand cela est utile
+
+Les bonnes pratiques du code Python
+
+Le guide officiel de style Python s'appelle PEP 8.
+Il recommande :
+
+- des noms explicites pour les variables
+- des espaces autour des operateurs
+- une indentation propre
+- des commentaires utiles
+- des fonctions courtes et claires
+
+Exemple bien ecrit :
+
+prix_total = 15
+TVA = 0.20
+
+prix_ttc = prix_total + (prix_total * TVA)
+print(prix_ttc)
+
+Exemple mal ecrit :
+
+pt=15
+T=0.20
+pttc=pt+(pt*T)
+print(pttc)
+
+Le second exemple est moins lisible.
+
+En resume
+
+- les erreurs font partie du code
+- il faut les anticiper
+- garder le code propre aide a les eviter
+- les commentaires et les docstrings rendent le code plus lisible
+- try/except permet de mieux gerer les erreurs
+- Python leve des exceptions qui nous indiquent exactement le probleme
+
+Un bon programmeur ne cherche pas a eviter les erreurs totalement.
+Il cherche a les comprendre, les predire et les corriger proprement.
+
+C'est une competence importante en programmation.
+
+Et c'est ce qui rend votre code plus solide.
